@@ -62,8 +62,6 @@ class _StartPageState extends State<StartPage> {
                       _myBox.put(1, playerName);
                     });
                     savedName = (_myBox.get(1));
-
-                    //debugPrint(playerName);
                   },
                   child: const Text('Enter Player Name'),
                 ),

@@ -63,19 +63,13 @@ class _PageOneState extends State<PageOne> {
       'Wisconsin',
       'Wyoming'
     ];
-    //String stateName;
-    //var rng = Random();
+
     ourStates.shuffle();
     String stateName = ourStates[0];
     var answer = stateName;
     String button2 = ourStates[1];
     String button3 = ourStates[2];
-    //stateName = ourStates[rng.nextInt(ourStates.length)];
-    //var answer = stateName;
-    //ourStates.shuffle();
 
-    //String button2 = ourStates[rng.nextInt(ourStates.length)];
-    //String button3 = ourStates[rng.nextInt(ourStates.length)];
     List newButtons = [answer, button2, button3];
     List newButtonsSC = newButtons.toList();
 
@@ -84,13 +78,6 @@ class _PageOneState extends State<PageOne> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     setState(() {});
-        //   },
-        //   tooltip: 'Next',
-        //   child: const Icon(Icons.add),
-        // ),
         bottomNavigationBar: BottomAppBar(
           color: Colors.yellow,
           child: Container(height: 50.0),
