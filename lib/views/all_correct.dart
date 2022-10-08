@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:audioplayers/audioplayers.dart';
+
+class AllCorrectPage extends StatelessWidget {
+  final _myBox = Hive.box('myBox');
+  String playerName = '';
+  final player = AudioPlayer();
+
+  AllCorrectPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final List args =
+        ModalRoute.of(context)!.settings.arguments as List<dynamic>;
+    String correctState = args[0];
+    String? stateCap = args[1];
+    player.play(AssetSource('success-fanfare-trumpets.mp3'));
+
+    playerName = (_myBox.get(1));
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Correct Answer!'),
+      ),
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/states_name/$correctState.png'),
+            Text(
+              'You GotThe Right Answer $playerName!!\n$correctState\nState Capitol $stateCap',
+              style: const TextStyle(fontSize: 25),
+              textAlign: TextAlign.center,
+            ),
+            ElevatedButton(
+              child: const Text('Next State'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/page_one');
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// © 2022 SimCon All Rights Reserved
