@@ -18,10 +18,25 @@ class WrongPage extends StatelessWidget {
         title: const Text('Incorrect!!'),
       ),
       body: SizedBox(
-        child: Center(
-          child: Text('Hi $playerName \n Wrong Answer Try Again!',
-              style: const TextStyle(fontSize: 25.0),
-              textAlign: TextAlign.center),
+        child: Column(
+          children: [
+            Center(
+              child: Text('Hi $playerName \n Wrong Answer Try Again!',
+                  style: const TextStyle(fontSize: 25.0),
+                  textAlign: TextAlign.center),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('<<<<Back'),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
