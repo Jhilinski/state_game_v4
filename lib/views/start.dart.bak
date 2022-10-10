@@ -1,3 +1,5 @@
+//import '/views/page_one.dart';
+
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -12,7 +14,7 @@ class _StartPageState extends State<StartPage> {
   final TextEditingController _playerTextController = TextEditingController();
 
   String playerName = 'Player';
-  String savedName = 'Player';
+  String savedName = '';
 
   //reference our box
   final _myBox = Hive.box('myBox');
@@ -52,32 +54,27 @@ class _StartPageState extends State<StartPage> {
                     border: OutlineInputBorder(),
                     hintText: 'Type Your Name!',
                   ),
-				  //onChanged is called whenever we add or delete something on Text Field
-                  onSubmitted: (String str){
-                    setState((){
-                      playerName = str;
-                      _myBox.put(1, playerName);
-                      savedName = (_myBox.get(1));
-                    });
-                  }
                 ),
-                //displaying input text
-                //new Text(playerName),
-              
-                
-                  
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      playerName = _playerTextController.text;
+                      _myBox.put(1, playerName);
+                    });
+                    savedName = (_myBox.get(1));
+                  },
+                  child: const Text('Enter Player Name'),
+                ),
                 const SizedBox(height: 5.0),
-              
                 ElevatedButton(
                   child: const Text('Start'),
                   onPressed: () {
                     Navigator.of(context).pushNamed('/page_one');
-                },
-                )
-                
-                ]),
-              ),
-        )
-     );
+                  },
+                ),
+              ]),
+        ),
+      ),
+    );
   }
 }
