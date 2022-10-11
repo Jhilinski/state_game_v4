@@ -72,7 +72,7 @@ class _PageOneState extends State<PageOne> {
 
     List newButtons = [answer, button2, button3];
     List newButtonsSC = newButtons.toList();
-
+    //check for shuffle position
     newButtons.shuffle();
 
     return MaterialApp(
