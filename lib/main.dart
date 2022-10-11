@@ -9,9 +9,10 @@ import 'views/start.dart';
 void main() async {
   //initialize Hive
   await Hive.initFlutter();
-
+  String playerName = 'Player';
   // open the box
   var box = await Hive.openBox('myBox');
+  box.put(1, playerName);
   runApp(const MyApp());
 }
 

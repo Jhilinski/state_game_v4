@@ -71,6 +71,7 @@ class _PageOneState extends State<PageOne> {
     String button3 = ourStates[2];
 
     List newButtons = [answer, button2, button3];
+    //newButtons.shuffle();
     List newButtonsSC = newButtons.toList();
     //check for shuffle position
     newButtons.shuffle();
