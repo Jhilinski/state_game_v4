@@ -22,6 +22,7 @@ class AllCorrectPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Correct Answer!'),
+        automaticallyImplyLeading: false,
       ),
       body: SizedBox(
         width: double.infinity,

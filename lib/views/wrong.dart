@@ -16,6 +16,7 @@ class WrongPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Incorrect!!'),
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
