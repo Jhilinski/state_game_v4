@@ -54,6 +54,7 @@ class _StartPageState extends State<StartPage> {
                           print(value);
                           setState(() {
                             checkBoxValue = value;
+                            _myBox.put(2, checkBoxValue );
                           });
                         },
                       ),
