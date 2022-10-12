@@ -11,12 +11,15 @@ class AllCorrectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool? isAudio = (_myBox.get(2));
     final List args =
         ModalRoute.of(context)!.settings.arguments as List<dynamic>;
     String correctState = args[0];
     String? stateCap = args[1];
+    print('isAudio-ac $isAudio');
+    if (isAudio != false){
     player.play(AssetSource('success-fanfare-trumpets.mp3'));
-
+    }
     playerName = (_myBox.get(1));
 
     return Scaffold(
