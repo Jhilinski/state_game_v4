@@ -11,7 +11,12 @@ class WrongPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     playerName = (_myBox.get(1));
-    player.play(AssetSource('wrong-buzzer.mp3'));
+    bool? isAudio = (_myBox.get(2));
+    print('isAudio $isAudio');
+    if (isAudio != false){
+      player.play(AssetSource('wrong-buzzer.mp3')); 
+    }
+    
 
     return Scaffold(
       appBar: AppBar(

@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -19,7 +17,7 @@ class _StartPageState extends State<StartPage> {
 
   //reference our box
   final _myBox = Hive.box('myBox');
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,6 +43,7 @@ class _StartPageState extends State<StartPage> {
                     'Do You Know Your State Shape?',
                     style: TextStyle(fontSize: 20.0),
                   ),
+                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
