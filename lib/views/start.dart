@@ -50,14 +50,14 @@ class _StartPageState extends State<StartPage> {
                       Checkbox(
                         value: checkBoxValue,
                         onChanged: (bool? value) {
-                          print(value);
+                          
                           setState(() {
                             checkBoxValue = value;
                             _myBox.put(2, checkBoxValue );
                           });
                         },
                       ),
-                      const Text('Audio?'),
+                      const Text('Sound?'),
                     ],
                   ),
 
