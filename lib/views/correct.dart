@@ -17,7 +17,7 @@ class CorrectPage extends StatelessWidget {
     final List args =
         ModalRoute.of(context)!.settings.arguments as List<dynamic>;
     String correctState = args[0];
-    print('isAudio-c $isAudio');
+    //audio on or off
     if (isAudio != false){
     player.play(AssetSource('success-fanfare-trumpets.mp3'));
     }
