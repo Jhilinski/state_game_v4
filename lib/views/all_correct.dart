@@ -29,22 +29,24 @@ class AllCorrectPage extends StatelessWidget {
       ),
       body: SizedBox(
         width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/images/states_name/$correctState.png'),
-            Text(
-              'You GotThe Right Answer $playerName!!\n$correctState\nState Capitol $stateCap',
-              style: const TextStyle(fontSize: 25),
-              textAlign: TextAlign.center,
-            ),
-            ElevatedButton(
-              child: const Text('Next State'),
-              onPressed: () {
-                Navigator.of(context).pushNamed('/page_one');
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/states_name/$correctState.png'),
+              Text(
+                'You GotThe Right Answer $playerName!!\n$correctState\nState Capitol $stateCap',
+                style: const TextStyle(fontSize: 25),
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                child: const Text('Next State'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/page_one');
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
